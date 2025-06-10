@@ -14,22 +14,31 @@
 
     header {
       background-color: #ffffff;
-      padding: 1.5rem 1rem;
+      padding: 1.5rem 1rem 3rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: relative;
     }
 
-    #lang-btn {
+    .lang-switcher {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      padding: 0.4rem 0.8rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-btn {
+      width: 32px;
+      height: 24px;
       cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+
+    .lang-btn.active {
+      border-color: #007bff;
     }
 
     .container {
@@ -87,7 +96,11 @@
       <span class="lang active" data-lang="es">Mis Juegos / Proyectos</span>
       <span class="lang" data-lang="en">My Games / Projects</span>
     </h1>
-    <button id="lang-btn">EN</button>
+
+    <div class="lang-switcher">
+      <img src="https://flagcdn.com/w40/es.png" alt="Español" class="lang-btn active" data-set-lang="es">
+      <img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-btn" data-set-lang="en">
+    </div>
   </header>
 
   <div class="container">
@@ -102,7 +115,7 @@
         <span class="lang" data-lang="en">Play</span>
       </a>
     </div>
-    <!-- Puedes duplicar más tarjetas igual -->
+    <!-- Más tarjetas si quieres -->
   </div>
 
   <footer>
@@ -111,18 +124,24 @@
   </footer>
 
   <script>
-    const langBtn = document.getElementById('lang-btn');
-    let currentLang = 'es';
+    const langButtons = document.querySelectorAll('.lang-btn');
 
-    langBtn.addEventListener('click', () => {
-      currentLang = currentLang === 'es' ? 'en' : 'es';
-      document.querySelectorAll('.lang').forEach(el => {
-        el.classList.remove('active');
-        if (el.dataset.lang === currentLang) {
-          el.classList.add('active');
-        }
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selectedLang = btn.dataset.setLang;
+
+        // Actualizar los textos visibles
+        document.querySelectorAll('.lang').forEach(el => {
+          el.classList.remove('active');
+          if (el.dataset.lang === selectedLang) {
+            el.classList.add('active');
+          }
+        });
+
+        // Actualizar estilos de los botones
+        langButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
       });
-      langBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
     });
   </script>
 
