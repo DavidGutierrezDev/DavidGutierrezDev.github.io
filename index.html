@@ -14,14 +14,22 @@
 
     header {
       background-color: #ffffff;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    #lang-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     .container {
@@ -39,11 +47,6 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       padding: 1rem;
       text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     .card img {
@@ -52,9 +55,8 @@
       margin-bottom: 1rem;
     }
 
-    .card h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.2rem;
+    .card h2, .card p {
+      margin: 0.5rem 0;
     }
 
     .card a {
@@ -68,39 +70,61 @@
       font-size: 0.9rem;
       color: #888;
     }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: inline;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Mis Juegos / Proyectos</h1>
+    <h1>
+      <span class="lang active" data-lang="es">Mis Juegos / Proyectos</span>
+      <span class="lang" data-lang="en">My Games / Projects</span>
+    </h1>
+    <button id="lang-btn">EN</button>
   </header>
 
   <div class="container">
     <div class="card">
       <img src="https://via.placeholder.com/300x200?text=Juego+1" alt="Juego 1">
-      <h2>Nombre del Juego 1</h2>
-      <a href="#">Jugar</a>
+      <h2>
+        <span class="lang active" data-lang="es">Nombre del Juego 1</span>
+        <span class="lang" data-lang="en">Game Name 1</span>
+      </h2>
+      <a href="#">
+        <span class="lang active" data-lang="es">Jugar</span>
+        <span class="lang" data-lang="en">Play</span>
+      </a>
     </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Juego+2" alt="Juego 2">
-      <h2>Nombre del Juego 2</h2>
-      <a href="#">Jugar</a>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Juego+3" alt="Juego 3">
-      <h2>Nombre del Juego 3</h2>
-      <a href="#">Jugar</a>
-    </div>
-
-    <!-- Puedes duplicar más tarjetas aquí -->
+    <!-- Puedes duplicar más tarjetas igual -->
   </div>
 
   <footer>
-    © 2025 Tu Nombre. Todos los derechos reservados.
+    <span class="lang active" data-lang="es">© 2025 Tu Nombre. Todos los derechos reservados.</span>
+    <span class="lang" data-lang="en">© 2025 Your Name. All rights reserved.</span>
   </footer>
+
+  <script>
+    const langBtn = document.getElementById('lang-btn');
+    let currentLang = 'es';
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+        if (el.dataset.lang === currentLang) {
+          el.classList.add('active');
+        }
+      });
+      langBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    });
+  </script>
 
 </body>
 </html>
