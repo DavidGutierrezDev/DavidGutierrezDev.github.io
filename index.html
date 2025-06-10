@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis Proyectos</title>
+  <title>DavidGutierrezDev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Nunito', sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
 
     header {
       background-color: #ffffff;
-      padding: 1.5rem 1rem 3rem;
+      padding: 1rem 1rem 1rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: relative;
@@ -46,31 +47,57 @@
       margin: 2rem auto;
       padding: 0 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
 
+    /* Card con grid de 2 columnas */
     .card {
       background-color: white;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       padding: 1rem;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .card img {
-      max-width: 100%;
+    /* Columna izquierda: texto */
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-text h2, .card-text p {
+      margin: 0;
+    }
+
+    /* Columna derecha: imagen y enlace abajo */
+    .card-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-images .main-img {
+      width: 100%;
+      max-width: 300px;
       border-radius: 8px;
-      margin-bottom: 1rem;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .card h2, .card p {
-      margin: 0.5rem 0;
+    .card-images .link-img {
+      width: 150px;
+      height: 70px;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .card a {
-      text-decoration: none;
-      color: #007bff;
+    .card-images .link-img:hover {
+      transform: scale(1.05);
     }
 
     footer {
@@ -87,63 +114,235 @@
     .lang.active {
       display: inline;
     }
+
+    /* Responsive: en pantallas pequeñas, que la card sea una columna */
+    @media (max-width: 700px) {
+      .card {
+        grid-template-columns: 1fr;
+      }
+
+      .card-images .main-img {
+        max-width: 100%;
+      }
+    }
+
+    /* Estilos para la nueva sección tipo cabecera abajo */
+    .section-header {
+      background-color: #ffffff;
+      padding: 2rem 1rem 2rem;
+      text-align: center;
+      position: relative;
+      margin-top: 3rem;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .header-left {
+      flex: 1;
+    }
+
+    .header-left .main-title {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .header-left .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .header-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-center .img-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-center img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .header-center .center-text {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-right a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .header-right a:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-right {
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>
-      <span class="lang active" data-lang="es">Mis Juegos / Proyectos</span>
-      <span class="lang" data-lang="en">My Games / Projects</span>
-    </h1>
-
+    <div class="header-wrapper">
+      <div class="header-left">
+        <h1 class="main-title">David Gutiérrez</h1>
+        <p class="subtitle">Game Developer & Designer</p>
+      </div>
+      <div class="header-center">
+        <div class="img-row">
+          <a href="https://davidgutierrezdev.itch.io/" target="_blank" rel="noopener noreferrer">
+            <img src="https://static.itch.io/images/itchio-textless-black.svg" alt="Icon 1" />
+          </a>
+          <a href="https://www.linkedin.com/in/david-guti%C3%A9rrez-392b4a278/" target="_blank" rel="noopener noreferrer">
+            <img src="Images/icons8-linkedin.svg" alt="Icon 2" />
+          </a>
+        </div>
+        <p class="center-text">dgutierrezn98@gmail.com</p>
+      </div>
+      <div class="header-right">
+        <a href="#projects" class="lang active" data-lang="es">Proyectos</a>
+        <a href="#projects" class="lang" data-lang="en">Proyects</a>
+        <a href="#about"  class="lang active" data-lang="es">Sobre mí</a>
+        <a href="#about" class="lang" data-lang="en">About me</a>
+        <a href="#contact"  class="lang active" data-lang="es">Contacto</a>
+        <a href="#contact" class="lang" data-lang="en">Contact</a>
+      </div>
+    </div>
     <div class="lang-switcher">
-      <img src="https://flagcdn.com/w40/es.png" alt="Español" class="lang-btn active" data-set-lang="es">
-      <img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-btn" data-set-lang="en">
+      <img src="https://flagcdn.com/w40/es.png" alt="Español" class="lang-btn active" data-set-lang="es" />
+      <img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-btn" data-set-lang="en" />
     </div>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Juego+1" alt="Juego 1">
-      <h2>
-        <span class="lang active" data-lang="es">Nombre del Juego 1</span>
-        <span class="lang" data-lang="en">Game Name 1</span>
-      </h2>
-      <a href="#">
-        <span class="lang active" data-lang="es">Jugar</span>
-        <span class="lang" data-lang="en">Play</span>
-      </a>
+  <section id="about">
+    <div class="container">
+      <div class="card">
+        <div class="card-images">
+          <img src="Images\img20250610_14105838_proc.jpg" alt="Foto" class="main-img" />
+        </div>
+        <div class="card-text">
+          <h2>
+            <span class="lang active" data-lang="es">¡Hola! Soy David</span>
+            <span class="lang" data-lang="en">Hi! I'm David</span>
+          </h2>
+          <p>
+            <span class="lang active" data-lang="es">Soy David Gutiérrez, desarrollador indie de videojuegos. Me apasiona crear mundos con personalidad, contar historias a través del juego y experimentar con mecánicas únicas. Si te gustan los proyectos con alma, ¡bienvenido!</span>
+            <span class="lang" data-lang="en">I'm David Gutiérrez, an indie game developer passionate about crafting unique worlds, telling stories through gameplay, and experimenting with creative mechanics. If you enjoy games with heart, you're in the right place!</span>
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- Más tarjetas si quieres -->
-  </div>
+  </section>
+
+  <section id="projects">
+    <section class="section-header">
+      <h2>
+        <span class="lang active" data-lang="es">Mis Juegos / Proyectos</span>
+        <span class="lang" data-lang="en">My Games / Projects</span>
+      </h2>
+    </section>
+    <div class="container">
+      <div class="card">
+        <div class="card-text">
+          <h2>
+            <span class="lang active" data-lang="es">Echoes of a Lost Future</span>
+            <span class="lang" data-lang="en">Echoes of a Lost Future</span>
+          </h2>
+          <p>
+            <span class="lang active" data-lang="es">¡Descubre un mundo en ruinas y forja tu leyenda en Echoes of a Lost Future! Sumérgete en Azeris, un reino postapocalíptico donde la civilización yace bajo tumbas de cristal, y solo los valientes se atreven a desafiar lo desconocido. Encarna a Kael, un joven audaz cuyos sueños podrían ser la última esperanza de la humanidad. Con cada paso entre escombros de ciudades olvidadas, deberás usar tu ingenio para combatir en batallas por turnos llenas de estrategia, reunir aliados inesperados y desentrañar secretos ocultos en los restos de un mundo que alguna vez fue glorioso.¿Podrás encontrar la cura que salvará a la humanidad… o sucumbirás en el intento? Explora, lucha y sobrevive en una aventura épica donde... ¡El futuro está en tus manos!</span>
+            <span class="lang" data-lang="en">Discover a world in ruins and forge your legend in Echoes of a Lost Future! Immerse yourself in Azeris, a post-apocalyptic realm where civilization lies beneath crystal tombs, and only the brave dare to challenge the unknown. Take on the role of Kael, a daring young man whose dreams might be humanity’s last hope. With every step through the rubble of forgotten cities, you must use your wits to fight in strategic turn-based battles, gather unexpected allies, and unravel hidden secrets within the remnants of a once-glorious world.Will you find the cure that will save humanity… or will you fall trying? Explore, fight, and survive in an epic adventure where the future is in your hands!</span>
+          </p>
+        </div>
+        <div class="card-images">
+          <img src="Images/Echoes.jpg" alt="Juego 1" class="main-img" />
+          <a href="https://davidgutierrezdev.itch.io/echoes-of-a-lost-future" target="_blank" rel="noopener noreferrer">
+            <img src="https://static.itch.io/images/logo-black-new.svg" alt="Ir al juego" class="link-img" />
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-text">
+          <h2>
+            <span class="lang active" data-lang="es">Hungy Spidy</span>
+            <span class="lang" data-lang="en">Hungy Spidy</span>
+          </h2>
+          <p>
+            <span class="lang active" data-lang="es">Prepárate para encarnar al depredador definitivo, come insectos, esquiva cuervos y sobrevive el mayor tiempo posible.</span>
+            <span class="lang" data-lang="en">Get ready to embody the ultimate predator, eat bugs, dodge crows, and survive as long as you can.</span>
+          </p>
+        </div>
+        <div class="card-images">
+          <img src="Images/Spidey.png" alt="Juego 1" class="main-img" />
+          <a href="https://pablofm99.itch.io/hungy-spidey" target="_blank" rel="noopener noreferrer">
+            <img src="https://static.itch.io/images/logo-black-new.svg" alt="Ir al juego" class="link-img" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <span class="lang active" data-lang="es">© 2025 Tu Nombre. Todos los derechos reservados.</span>
-    <span class="lang" data-lang="en">© 2025 Your Name. All rights reserved.</span>
+    <span class="lang active" data-lang="es">© 2025 David Gutiérrez. Todos los derechos reservados.</span>
+    <span class="lang" data-lang="en">© 2025 David Gutiérrez. All rights reserved.</span>
   </footer>
 
   <script>
     const langButtons = document.querySelectorAll('.lang-btn');
-
     langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const selectedLang = btn.dataset.setLang;
-
-        // Actualizar los textos visibles
         document.querySelectorAll('.lang').forEach(el => {
           el.classList.remove('active');
           if (el.dataset.lang === selectedLang) {
             el.classList.add('active');
           }
         });
-
-        // Actualizar estilos de los botones
         langButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       });
     });
   </script>
-
 </body>
 </html>
