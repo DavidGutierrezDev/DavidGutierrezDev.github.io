@@ -15,11 +15,16 @@
 
     header {
       background-color: #ffffff;
-      padding: 1rem 1rem 1rem;
+      padding: 0.1rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: relative;
+      position: fixed; /* Cambiado de relative a fixed */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Para que quede encima del contenido */
     }
+
 
     .lang-switcher {
       position: absolute;
@@ -42,12 +47,18 @@
       border-color: #007bff;
     }
 
+    html {
+      scroll-padding-top: 170px; /* ajusta este valor al alto real del header */
+    }
     .container {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
       display: grid;
       gap: 1.5rem;
+    }
+    #presentation .container {
+      margin-top: 14rem;
     }
 
     /* Card con grid de 2 columnas */
@@ -255,7 +266,7 @@
     </div>
   </header>
 
-  <section id="about">
+  <section id="presentation">
     <div class="container">
       <div class="card">
         <div class="card-images">
