@@ -1,0 +1,463 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+    background-color: #121212;
+    color: #8bc5bf;
+  }
+
+  header {
+    padding: 0rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .lang-switcher {
+    display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem; /* separa de los iconos */
+  justify-content: flex-end;
+  }
+
+  .lang-btn {
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+  .lang-switcher a,
+.lang-btn {
+    outline: none;
+    border: none; /* por si acaso */
+}
+
+.lang-switcher a:focus {
+    outline: none;
+}
+
+  .lang-btn.active {
+    border-color: #007bff;
+  }
+
+  html {
+    scroll-padding-top: 137px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  #presentation .container {
+    margin-top: 11.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0px;
+    padding-top: 25px;
+  }
+
+  .cardMe{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+    gap: 3rem;
+    font-size: 25px;
+
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-text h2, .card-text p {
+    margin: 0;
+  }
+
+  .card-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .main-img-pfp{
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .card-images .main-img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .card-images .link-img {
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+
+  .linkedin-icon {
+  width: 40px;
+  height: 40px;
+  fill: #8bc5bf; /* tu color de texto */
+  transition: fill 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  fill: #ffffff;
+}
+
+
+.header-center img:not(.lang-btn),
+.footer-contact img {
+  filter: invert(74%) sepia(12%) saturate(484%) hue-rotate(125deg) brightness(92%) contrast(91%);
+  transition: filter 0.3s ease;
+}
+
+.header-center img:not(.lang-btn):hover,
+.footer-contact img:hover {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+  .card-images .link-img:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .footer-contact .img-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .footer-contact img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .footer-contact .center-text {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .lang {
+    display: none;
+  }
+
+  .lang.active {
+    display: inline;
+  }
+
+  @media (max-width: 700px) {
+    .card {
+      grid-template-columns: 1fr;
+    }
+    .cardMe {
+        grid-template-columns: 1fr; /* pasa a columna única en móvil */
+    }
+    #projects .card-images {
+        height: 180px;
+    }
+    #projects .card-text h2 {
+        font-size: 1rem;
+    }
+    #projects .card-text p {
+        font-size: 0.85rem;
+    }
+  }
+
+  .section-header {
+    padding: 2rem 1rem 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: 3rem;
+    font-size: 20px;
+  }
+
+  .section-header h2 {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: #121212;
+  }
+
+  .header-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .header-left .main-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .header-left .subtitle {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+  }
+
+  .header-center {
+    flex: 0;
+  margin-left: auto; /* empuja este bloque a la derecha */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* alinea iconos y texto a la derecha */
+  text-align: right;
+  }
+
+  .header-center .img-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .header-center img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .header-center .center-text {
+    font-size: 0.9rem;
+    margin: 0px;
+  }
+
+  .header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header-right a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .header-right a:hover {
+    color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    #presentation .container {
+      margin-top: 10rem;
+    }
+
+    .header-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-right {
+      display: none;
+    }
+
+    .header-center {
+      display: none;
+    }
+
+    .hamburger {
+      display: block !important;
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #007bff;
+      z-index: 1001;
+    }
+
+    .footer-wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-contact {
+      align-items: center;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-menu a:first-child {
+    padding-top: 0;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  #projects .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#projects .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 500px; /* altura total de la tarjeta */
+    padding: 0;
+}
+
+#projects .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+#projects .card-images {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#projects .card-images img.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+
+#projects .card:hover .card-images img.main-img {
+    transform: scale(1.05);
+}
+
+#projects .card-text {
+    width: 95%;
+    height: 50%;
+    padding: 0 1rem 1rem 1rem;
+    color: #8bc5bf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#projects .card-text h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#projects .card-text .text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.line-break {
+  display: block;
+  margin-top: 0.5rem; /* espacio solo después de esta línea */
+}
+
+#projects .card-images a.link-img {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#projects .card-images a.link-img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+  
