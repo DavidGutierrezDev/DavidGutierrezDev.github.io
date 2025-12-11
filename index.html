@@ -255,7 +255,10 @@
     </div>
 </section>
 <section id="about">
-  <h2>Sobre mí</h2>
+  <h2>
+    <span class="lang active" data-lang="es">Sobre Mí</span>
+    <span class="lang" data-lang="en">About Me</span>
+  </h2>
   <div class="about-card">
     <div class="lang active" data-lang="es">
               <p>Soy un programador y diseñador de videojuegos con una gran pasión por crear experiencias divertidas y atractivas. He desarrollado tanto proyectos en solitario como en equipo, y siempre busco nuevas oportunidades para mejorar mis habilidades y aprender nuevas tecnologías.</p>
@@ -273,8 +276,6 @@
 </footer>
   <script>
   const langButtons = document.querySelectorAll('.lang-btn');
-  const hamburger = document.getElementById('hamburgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
 
   // Cambio de idioma
   langButtons.forEach(btn => {
@@ -289,34 +290,6 @@
       langButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     });
-  });
-
-  // Abrir/cerrar menú
-  hamburger.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que el clic se propague y lo cierre de inmediato
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  // Cerrar menú al hacer clic en un enlace
-  const menuLinks = mobileMenu.querySelectorAll('a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.style.display = 'none';
-    });
-  });
-
-  // Cerrar menú al hacer clic fuera del menú
-  document.addEventListener('click', (e) => {
-    const isClickInsideMenu = mobileMenu.contains(e.target);
-    const isClickOnHamburger = hamburger.contains(e.target);
-    if (!isClickInsideMenu && !isClickOnHamburger) {
-      mobileMenu.style.display = 'none';
-    }
-  });
-
-  // Cerrar menú al hacer scroll
-  window.addEventListener('scroll', () => {
-    mobileMenu.style.display = 'none';
   });
 </script>
 </body>
