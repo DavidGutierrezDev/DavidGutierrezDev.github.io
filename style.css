@@ -554,24 +554,33 @@ body {
 }
 
 #skills {
-  margin-top: 5rem;
+  margin-top: 4rem;
   padding: 3rem 0rem 3rem 0rem;
-  background-color: #1a1a1a;
   color: #8bc5bf;
   text-align: center;
 }
 
 #skills h2 {
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   margin-top: 0px;
 }
 
+.skills-wrapper {
+  max-width: 1200px;  /* ancho máximo del contenido de la web */
+  margin: 0 auto;     /* centra horizontalmente */
+  padding: 0 1rem;    /* un pequeño padding lateral */
+}
+
 .skills-container {
+  padding: 1rem;
+  background-color: #1a1a1a;
   display: flex;
-  flex-wrap: wrap;       /* permite que baje a otra fila si no caben */
+  flex-wrap: wrap;       
   justify-content: center;
-  gap: 3rem;;
+  gap: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill img {
@@ -584,4 +593,57 @@ body {
 .skill img:hover {
   transform: scale(1.2);
   filter: brightness(1.2);
+}
+
+#about {
+  padding: 4rem 1rem;
+  color: #8bc5bf;
+  text-align: center;
+}
+
+.about-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #121212;
+  border: 2px solid #8bc5bf;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.about-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-card ul li {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-card ul li::before {
+  content: "•";
+  color: #6ff2c6;
+  position: absolute;
+  left: 0;
 }
