@@ -200,40 +200,34 @@ body {
     display: inline;
   }
 
-  @media (max-width: 700px) {
-    .card {
-      grid-template-columns: 1fr;
-    }
-    .cardMe {
-        grid-template-columns: 1fr; /* pasa a columna única en móvil */
-    }
-    #projects .card-images {
-        height: 180px;
-    }
-    #projects .card-text h2 {
-        font-size: 1rem;
-    }
-    #projects .card-text p {
-        font-size: 0.85rem;
-    }
-  }
+ .section-header {
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 20px;
+  background: none;
+}
 
-  .section-header {
-    padding: 2rem 1rem 2rem;
-    text-align: center;
-    position: relative;
-    margin-top: 3rem;
-    font-size: 20px;
-  }
+.section-header .inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centrado del título */
+}
 
-  .section-header h2 {
-    margin: 0;
-    font-weight: 700;
-  }
+.section-header h2 {
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+  flex: 1; /* ocupa todo el espacio disponible */
+  z-index: 1;
+}
 
-  .section-header .back-button {
+.section-header .back-button {
   position: absolute;
-  right: 22rem;  /* margen desde la derecha */
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   background-color: #121212;
@@ -244,6 +238,8 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  z-index: 10; /* 🔹 asegura que el botón reciba clics */
+  font-size: 1.1rem;
 }
 
 .section-header .back-button:hover {
@@ -320,48 +316,6 @@ body {
 
   .header-right a:hover {
     color: #0056b3;
-  }
-
-  @media (max-width: 768px) {
-    #presentation .container {
-      margin-top: 10rem;
-    }
-
-    .header-wrapper {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .header-right {
-      display: none;
-    }
-
-    .header-center {
-      display: none;
-    }
-
-    .hamburger {
-      display: block !important;
-      position: absolute;
-      top: 3rem;
-      right: 1rem;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #007bff;
-      z-index: 1001;
-    }
-
-    .footer-wrapper {
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
-    }
-
-    .footer-contact {
-      align-items: center;
-    }
   }
 
   .mobile-menu {
@@ -504,12 +458,6 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 700px) {
-  .project-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.2rem;
-  }
-}
 
 .education-card {
   background-color: #1e1e1e;
@@ -545,12 +493,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
-}
-
-@media (max-width: 700px) {
-  #education .container {
-    grid-template-columns: 1fr;
-  }
 }
 
 #skills {
@@ -604,8 +546,7 @@ body {
 .about-card {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #121212;
-  border: 2px solid #8bc5bf;
+  background-color: #1a1a1a;
   border-radius: 12px;
   padding: 2rem 2.5rem;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -617,9 +558,9 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
 
-.about-card h2 {
+#about h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .about-card p {
@@ -647,3 +588,151 @@ body {
   position: absolute;
   left: 0;
 }
+
+/* ============================= */
+/* 📱 Responsive Design */
+/* ============================= */
+@media (max-width: 900px) {
+
+  header{
+    position:relative
+  }
+  /* === Header y presentación === */
+  .header-wrapper {
+    flex-direction: column;      /* apila los dos bloques */
+    align-items: center;         /* centra horizontalmente */
+    text-align: center;          /* centra texto */
+    gap: 1rem;
+  }
+
+  .header-left {
+    text-align: center;          /* centra nombre y subtítulo */
+  }
+
+  .header-center {
+    align-items: center !important; /* 🔹 fuerza centrado de iconos */
+    text-align: center !important;  /* 🔹 centra también el texto del correo */
+    margin-left: 0px;             /* espacio entre nombre e iconos */
+  }
+
+  .header-center .img-row {
+    justify-content: center;      /* 🔹 centra la fila de iconos y banderas */
+  }
+
+  .header-left .main-title {
+    font-size: 2.2rem;
+  }
+
+  .header-left .subtitle {
+    font-size: 0.95rem;
+  }
+
+  #presentation .container{
+    margin-top: 0px;
+  }
+
+  .cardMe {
+    grid-template-columns: 1fr; /* de dos columnas a una */
+    text-align: center;
+  }
+
+  .cardMe .card-images {
+    margin-bottom: 1rem;
+  }
+
+  /* === Sección de juegos === */
+  #projects .container {
+    grid-template-columns: 1fr; /* pasa de 2 columnas a 1 */
+  }
+
+  #projects .card {
+    height: auto; /* adapta el alto al contenido */
+  }
+
+  #projects .card-text {
+    height: auto;
+    padding: 1rem;
+  }
+
+  /* === Sección de educación === */
+  #education .container {
+    grid-template-columns: 1fr; /* pasa a 1 columna */
+  }
+
+  /* === Skills === */
+  .skills-container {
+    gap: 1.5rem; /* menos espacio entre iconos */
+    padding: 1.5rem 0.5rem;
+  }
+
+  .skill img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #skills h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  /* === Sobre mí === */
+  #about {
+    padding: 2.5rem 1rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+#projects {
+    padding-top: 0 !important; /* sobrescribe el inline style */
+  }
+
+  .section-header{
+    padding: 0;
+  }
+
+  .section-header h2 {
+    text-align: center;
+    margin-bottom: 1rem; /* espacio entre título y botón */
+  }
+
+  .section-header .back-button {
+    position: static; /* deja que el flujo natural lo coloque */
+    transform: none;  /* quita translate */
+    margin-top: 0;    /* ya no necesitamos margen extra */
+  }
+
+  .section-header .inner {
+    flex-direction: column; /* apila título y botón */
+    align-items: center;    /* centra horizontalmente */
+    justify-content: center;
+  }
+
+}
+
+/* ===== Aún más compacto en móviles pequeños ===== */
+@media (max-width: 600px) {
+  .skills-container {
+    gap: 1rem;
+  }
+
+  .skill img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .cardMe p {
+    font-size: 0.95rem;
+  }
+
+  #projects .card-text h2 {
+    font-size: 1rem;
+  }
+}
+
