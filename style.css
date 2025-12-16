@@ -101,21 +101,21 @@ body {
     gap: 0.5rem;
   }
 
-.engine-logo {
-  position: absolute;
-  bottom: 8px;  /* margen desde abajo */
-  right: 8px;   /* margen desde la derecha */
-  width: 30px;  /* tamaño del logo */
-  height: 30px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: transform 0.3s, opacity 0.3s;
-}
+  .engine-logo {
+    position: absolute;
+    bottom: 8px;  /* margen desde abajo */
+    right: 8px;   /* margen desde la derecha */
+    width: 30px;  /* tamaño del logo */
+    height: 30px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.3s, opacity 0.3s;
+  }
 
-.engine-logo:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
+  .engine-logo:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 
   .main-img-pfp{
     width: 100%;
