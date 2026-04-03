@@ -217,7 +217,7 @@ body {
   }
 
  .section-header {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   margin-top: 3rem;
   font-size: 20px;
   background: none;
@@ -513,16 +513,12 @@ body {
 }
 
 #skills {
-  margin-top: 4rem;
-  padding: 3rem 0rem 3rem 0rem;
   color: #8bc5bf;
   text-align: center;
 }
 
 #skills h2 {
   font-size: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 0px;
 }
 
 .skills-wrapper {
@@ -532,6 +528,7 @@ body {
 }
 
 .skills-container {
+  margin-top: 2rem;
   padding: 1rem;
   background-color: #1a1a1a;
   display: flex;
@@ -555,14 +552,13 @@ body {
 }
 
 #about {
-  padding: 4rem 1rem;
   color: #8bc5bf;
   text-align: center;
 }
 
 .about-card {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;
   background-color: #1a1a1a;
   border-radius: 12px;
   padding: 2rem 2.5rem;
