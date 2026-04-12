@@ -762,6 +762,22 @@ body {
   border: none;
 }
 
+.card-games {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding-bottom: 0px;
+    padding-top: 25px;
+  }
+
+hr{
+  width: 100%;
+}
+
 /* ===== Aún más compacto en móviles pequeños ===== */
 @media (max-width: 600px) {
   .skills-container {
