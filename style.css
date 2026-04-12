@@ -16,6 +16,26 @@ body {
     z-index: 1000;
   }
 
+  video {
+    pointer-events: none;
+  }
+
+  .mobile-video {
+  width: 100%;
+  max-width: 185px;   /* controla el tamaño tipo móvil */
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mobile-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
   .lang-switcher {
     display: flex;
   gap: 0.5rem;
@@ -315,25 +335,6 @@ body {
     margin: 0px;
   }
 
-  .header-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .header-right a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .header-right a:hover {
-    color: #0056b3;
-  }
-
   .mobile-menu {
     display: none;
     flex-direction: column;
@@ -379,7 +380,7 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    height: 500px; /* altura total de la tarjeta */
+    height: 516px; /* altura total de la tarjeta */
     padding: 0;
 }
 
@@ -392,7 +393,6 @@ body {
     height: 100%;
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
 #projects .card-images img.main-img {
@@ -745,5 +745,6 @@ body {
   #projects .card-text h2 {
     font-size: 1rem;
   }
+  
 }
 
