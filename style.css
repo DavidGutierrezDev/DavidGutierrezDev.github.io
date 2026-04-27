@@ -242,6 +242,13 @@ body {
   background: none;
 }
 
+.section-header-games
+{
+  margin-top: 3rem;
+  font-size: 20px;
+  background: none;
+}
+
 .section-header .inner {
   position: relative;
   max-width: 1200px;
