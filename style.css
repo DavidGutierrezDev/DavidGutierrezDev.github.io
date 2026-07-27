@@ -236,7 +236,7 @@ body {
   }
 
  .section-header {
-  padding: 2rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
   margin-top: 3rem;
   font-size: 20px;
   background: none;
@@ -282,6 +282,24 @@ body {
   transition: background-color 0.3s, transform 0.2s;
   z-index: 10; /* 🔹 asegura que el botón reciba clics */
   font-size: 1.1rem;
+}
+
+.ver-mas {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8bc5bf;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.ver-mas:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  color: #ffffff;
 }
 
 .section-header .back-button:hover {
@@ -564,7 +582,8 @@ body {
 
 .about-card {
   max-width: 800px;
-  margin: 2rem auto;
+  min-width: 800px;
+  margin: 2rem auto 0;
   background-color: #1a1a1a;
   border-radius: 12px;
   padding: 2rem 2.5rem;
@@ -579,6 +598,23 @@ body {
 
 #about h2 {
   font-size: 2rem;
+}
+
+.about-card pre {
+  background-color: #121212;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.about-card pre code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #8bc5bf;
+  white-space: pre;
 }
 
 .about-card p {
@@ -754,6 +790,43 @@ body {
 .game-title{
   text-align: center;
   font-size: 25px;
+}
+
+.game-title .inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-title .inner h2 {
+  margin: 0;
+  flex: 1;
+  z-index: 1;
+}
+
+.game-title .back-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #121212;
+  color: #8bc5bf;
+  border: 2px solid #1e1e1e;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 10;
+  font-size: 1.1rem;
+}
+
+.game-title .back-button:hover {
+  transform: translateY(-50%) translateX(-2px);
 }
 
 .video-container {
